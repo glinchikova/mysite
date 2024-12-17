@@ -1,0 +1,77 @@
+.price {
+    padding: rem(150) 0;
+    background-color: $beige;
+
+    @include breakpoint($mobile-bp) {
+        padding: rem(90) 0;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(105);
+
+        @include breakpoint($tablet-bp) {
+            margin-bottom: rem(45);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 40px 30px;
+
+        @include breakpoint($tablet-bp) {
+            grid-template-columns: 1fr;
+            max-width: rem(600);
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        
+    }
+
+    &__item-header {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        font: $price;
+        margin-bottom: rem(20);
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -9px;
+            width: 100%;
+            height: 2px;
+            background-color: #5199ff;
+        }
+
+        @include breakpoint($tablet-bp) {
+            font: $pricet;
+        }
+
+        @include breakpoint($mobile-bp) {
+            font: $pricem;
+        }
+    }
+
+    &__item-text {
+        font: $text16;
+
+        @include breakpoint($tablet-bp) {
+            font: $text14;
+        }
+
+        @include breakpoint($mobile-bp) {
+            font: $text12;
+        }
+    }
+}

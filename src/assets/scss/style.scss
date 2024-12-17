@@ -1,0 +1,26 @@
+@use 'sass:math';
+
+@import "mixins";
+@import "functions";
+@import "vars";
+@import "vendor/reset";
+@import "global";
+@import "fonts";
+ 
+
+@import "blocks/header";
+@import "blocks/heading";
+@import "blocks/priem";
+@import "blocks/about";
+@import "blocks/features";
+@import "blocks/expertise";
+@import "blocks/price";
+@import "blocks/publications";
+@import "blocks/contacts";
+@import "blocks/feedback";
+
+
+
+ 
+
+

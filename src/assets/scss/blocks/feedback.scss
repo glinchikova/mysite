@@ -1,0 +1,42 @@
+.feedback {
+    padding: rem(115) 0;
+
+    @include breakpoint($mobile-bp) {
+        padding: rem(90) 0;
+    }
+
+    &__container {
+        margin: 0 auto;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(40);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 40px;
+
+        @include breakpoint($tablet-bp) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint($mobile-bp) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+
+        cursor: pointer;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.heading {
+    padding-bottom: rem(75);
+
+    &__container {
+        // padding: 0 rem(20);
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @include breakpoint($mobile-bp) {
+            flex-direction: column;
+        }
+    }
+
+    &__image {
+        max-width: 50%;
+
+        @include breakpoint($mobile-bp) {
+            max-width: 100%;
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        max-width: 50%;
+
+        @include breakpoint($mobile-bp) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(28);
+    }
+    
+    &__text {
+        font: $text18;
+        opacity: 0.85;
+
+        @include breakpoint($tablet-bp) {
+            font: $text16;
+        }
+
+        @include breakpoint($mobile-bp) {
+            font: $text14;
+        }
+    }
+}

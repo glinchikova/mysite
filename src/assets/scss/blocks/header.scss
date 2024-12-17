@@ -1,0 +1,81 @@
+.page-header {
+    height: rem(100);
+    width: 100%;
+
+    @include breakpoint($tablet-bp) {
+        height: auto;
+        margin-bottom: rem(105);
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        @include breakpoint($tablet-bp) {
+            flex-direction: column;
+        }
+    }
+
+    &__contacts {
+        font: $header-contacts;
+        text-align: right;
+
+        @include breakpoint($tablet-bp) {
+            text-align: center;
+        }
+    }
+}
+
+.nav-main {
+
+    @include breakpoint($tablet-bp) {
+        margin-bottom: rem(30);
+    }
+    
+    &__list {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        @include breakpoint($tablet-bp) {
+            flex-direction: column;
+            padding: 20px 0;
+            gap: 15px;
+        }
+    }
+
+    &__link {
+        font: $menu;
+        color: black;
+        transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: #2015FF;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+}

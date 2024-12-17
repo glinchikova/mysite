@@ -1,0 +1,38 @@
+.priem {
+    padding: rem(30) 0 rem(60);
+
+    &__container {
+        max-width: 560px;
+        margin: 0 auto;
+        text-align: center;
+
+        // @include breakpoint($mobile-bp) {
+        //     padding: 0 10px;
+        // }
+    }
+
+    &__title {
+        margin-bottom: rem(40);
+    }
+
+    &__text {
+        font: $text24;
+        margin-bottom: rem(105);
+
+        @include breakpoint($tablet-bp) {
+            font: $text22;
+        }
+
+        @include breakpoint($mobile-bp) {
+            font: $text20;
+        }
+    }
+
+    &__socials {
+        a {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+        }
+    }
+}

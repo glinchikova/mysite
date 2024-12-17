@@ -1,0 +1,60 @@
+.about {
+    padding: rem(60) 0 rem(150);
+
+    @include breakpoint($mobile-bp) {
+        padding-bottom: rem(90);
+    }
+
+    &__container {
+        margin: 0 auto;
+        // padding: 0 rem(20);
+        display: flex;
+        gap: 40px;
+
+        @include breakpoint($tablet-bp) {
+            flex-direction: column;
+        }
+    }
+
+    &__card {
+        flex: 1;
+    }
+
+
+}
+
+
+.card-about {
+    display: flex;
+    gap: 20px;
+
+    &__image {
+        flex: 0 0 90px;
+        
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(8);
+    }
+
+    &__list {
+        padding-left: 20px;
+    }
+    
+    &__item {
+        list-style-type: disc;
+        font: $text16;
+
+        @include breakpoint($tablet-bp) {
+            font: $text14;
+        }
+
+        @include breakpoint($mobile-bp) {
+            font: $text12;
+        }
+    }
+}
+

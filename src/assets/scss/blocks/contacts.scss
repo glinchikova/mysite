@@ -1,0 +1,68 @@
+.contacts {
+    padding: rem(150) 0;
+
+    @include breakpoint($mobile-bp) {
+        padding: rem(90) 0;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include breakpoint($tablet-bp) {
+            flex-direction: column;
+            max-width: rem(600);
+            text-align: left;
+            align-items: start;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(30);
+    }
+
+    &__item {
+        font: $text20;
+
+        b {
+            font: $contacts-bold;
+        }
+
+        @include breakpoint($tablet-bp) {
+            font: $text18;
+        }
+
+        @include breakpoint($mobile-bp) {
+            font: $text16;
+        }
+    }
+
+    &__adress {
+        margin-bottom: rem(30);
+    }
+
+    &__socials {
+        a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__map {
+        width: 660px;
+
+        @include breakpoint($tablet-bp) {
+            width: 100%;
+        }
+    }
+
+    &__content {
+
+        @include breakpoint($tablet-bp) {
+            margin-bottom: rem(30);
+        }
+    }
+
+}

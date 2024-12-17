@@ -1,0 +1,331 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 rem(20);
+    margin: 0 auto;
+    
+    @include breakpoint($tablet-bp) {
+        padding: 0 20px;
+    }
+
+    // @include breakpoint($mobile-bp) {
+    //     padding: 0 10px;
+    // }
+}
+
+h1 {
+    font: $h1;
+    color: $blackish;
+}
+
+h2 {
+    font: $h2;
+    color: $main;
+
+    @include breakpoint($tablet-bp) {
+        font: $h2t;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font: $h2m;
+    }
+}
+
+h3 {
+    font: $h3;
+
+    @include breakpoint($tablet-bp) {
+        font: $h3t;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font: $h3m;
+    }
+}
+
+h4 {
+    font: $h4;
+
+    @include breakpoint($tablet-bp) {
+        font: $h4t;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font: $h4m;
+    }
+}
+
+h5 {
+    font: $h5;
+
+    @include breakpoint($tablet-bp) {
+        font: $h5t;
+    }
+
+    @include breakpoint($mobile-bp) {
+        font: $h5m;
+    }
+}
+
+// .logo {
+//     width: 82px;
+//     height: 52px;
+//     color: white;
+//     position: relative;
+//     text-align: center;
+//     border: 1px solid white;
+//     border-radius: 2px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     &__image {
+//         position: absolute;
+//         top: 23px;
+//         left: 10px;
+
+//         img {
+//             height: 100%;
+//             width: 100%;
+//         };
+
+//         @include breakpoint($tablet-bp) {
+//             top: 10px;
+//             left: 2px;
+//             height: 13px;
+            
+//             // img {
+//             //     width: 10px;
+//             //     height: 13px;
+//             // }
+//         }
+
+//         @include breakpoint($mobile-bp) {
+//             border: none;
+//             // width: 200px;
+//             top: 13px;
+//             left: 4px;
+//         }
+//     }
+
+//     &--footer {
+//         .logo__title {
+//             font: $h1;
+//         }
+
+//         @include breakpoint($tablet-bp) {
+//             .logo__image {
+//                 height: 20px;
+//                 left: 10px;
+//                 top: 20px;
+//             }
+//         }
+        
+//         @include breakpoint($mobile-bp) {
+//             border: none;
+//             width: 200px;
+
+//             .logo__image {
+//                 left: 110px;
+//                 top: 10px;
+//                 height: 20px;
+//             }
+//         }
+        
+//     }
+
+//     &--header {
+//         @include breakpoint($tablet-bp) {
+//             width: 47px;
+//             height: 29px;
+//             border: none;
+//         }
+
+
+
+
+//     }
+// }
+
+.page {
+    position: relative;
+    color: $main;
+}
+
+a {
+    text-decoration: none;
+}
+
+// h1 {
+//     font: $h1;
+
+//     @include breakpoint($tablet-bp) {
+//         font: $h1-tablet
+//     }
+    
+// }
+
+// h2 {
+//     font: $h2;
+//     color: $blackish;
+
+//     @include breakpoint($mobile-bp) {
+//         font: $subtitle
+//     }
+// }
+
+// h3 {
+//     font: $h3;
+//     color: $blackish;
+// }
+
+// .subtitle {
+//     font: $subtitle;
+//     color: $blackish;
+// }
+
+// .text13 {
+//     font: $text13;
+//     color: $blackish;
+//     b {
+//         font-weight: 500;
+//     }
+// }
+// .text14 {
+//     font: $text14;
+//     color: $blackish;
+//     b {
+//         font-weight: 500;
+//     }
+// }
+
+.lock {
+    overflow: hidden;
+}
+
+// .social-icon:hover {
+//     color: $green;
+
+// }
+
+// .overlay-header {
+//     display: none;
+//     position: absolute;
+//     height: 100vh;
+//     width: 100vw;
+//     top: 0;
+//     left: 0;
+//     background-color: grey;
+//     opacity: 0.5;
+
+//     &.active {
+//         display: block;
+//     }
+// }
+
+// .popup__overlay {
+//     display: none;
+//     z-index: 100;
+   
+//     &.active {
+//         position: fixed;
+//         width: 100vw;
+//         height: 100vh;
+//         top: 0;
+//         left: 0;
+        
+        
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+
+//         background-color: rgb(220,220,220, 0.5);
+//         // opacity: 0.5;
+//     }
+// }
+
+// .popup {
+//     background-color: white;
+//     padding: 20px;
+//     position: relative;
+
+//     &__close-icon {
+//         position: absolute;
+//         top: 5px;
+//         right: 5px;
+//         // right: 15px;
+//         width: 15px;
+//         height: 15px;
+//         cursor: pointer;
+
+//         img {
+//             height: 100%;
+//             width: 100%;
+//         }
+//     }    
+    
+//     .card-testimonial {
+//         min-width: 268px;
+//         max-width: 268px;
+//         height: 391px;
+    
+//         border: 2px solid #FEBDAB;
+//         border-image: $pink-gradient;
+//         border-radius: 20px;
+//         background-color: $light-gray;
+//         padding: 12px 14px 20px;
+    
+   
+//         &__header {
+//             display: flex;
+//             align-items: center;
+//             gap: 10px;
+//             margin-bottom: 10px;
+//         }
+    
+//         &__image {
+//             width: 37px;
+//             height: 37px;
+    
+//             img {
+//                 height: 100%;
+//                 width: 100%;
+//             }
+//         }
+    
+//         &__title {
+//             font: 400 rem(16)/1.2 $font;
+//             color: black;
+//         }
+    
+//         &__subtitle{
+//             font: $smallpar;
+//             color: #BDBDBD;
+//         }
+    
+//         &__body {
+//             overflow: hidden;
+//             height: 306px;
+//             font: $smallpar;
+//             color: $gray;
+    
+//         }
+    
+//         &__place {
+//             margin-right: 3px;
+//         }
+    
+//         &__day {
+//             margin-left: 3px;
+//         }
+//     }
+// }
