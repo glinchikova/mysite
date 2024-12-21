@@ -22,7 +22,7 @@ const cache = require('gulp-cache')
 
 /* Paths */
 const srcPath = 'src/';
-const distPath = 'dist/';
+const distPath = 'docs/';
 
 const path = {
     build: {
