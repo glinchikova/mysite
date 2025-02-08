@@ -776,6 +776,11 @@ a {
     }
 }
 
+.card-publication__next-link {
+    color: blue;
+    text-decoration: underline;
+}
+
 .card-publication a {
     display: block;
 }

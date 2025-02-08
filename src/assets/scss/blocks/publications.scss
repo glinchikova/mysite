@@ -88,6 +88,11 @@
         }
     }
 
+    &__next-link {
+        color: blue;
+        text-decoration: underline;
+    }
+
     a {
         display: block;
     }
