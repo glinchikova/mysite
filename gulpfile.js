@@ -24,6 +24,8 @@ const cache = require('gulp-cache')
 const srcPath = 'src/';
 const distPath = 'docs/';
 
+const specificJsFileToCopy = 'glinikovaru.js'
+
 const path = {
     build: {
         html:   distPath,
@@ -35,6 +37,7 @@ const path = {
     src: {
         html:   srcPath + "pages/**/*",
         js:     srcPath + "assets/js/*.js",
+        js_copy: srcPath + "assets/js/" + specificJsFileToCopy,
         css:    srcPath + "assets/scss/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
@@ -43,6 +46,7 @@ const path = {
         html:   srcPath + "pages/**/*",
         partials: srcPath + "partials/**/*",
         js:     srcPath + "assets/js/**/*.js",
+        js_copy: srcPath + "assets/js/" + specificJsFileToCopy,
         css:    srcPath + "assets/scss/**/*.scss",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
@@ -221,6 +225,21 @@ function jsWatch(cb) {
     cb();
 }
 
+function copySpecificJs() { // Убрал cb
+  return src(path.src.js_copy) // Берем конкретный файл
+      .pipe(plumber({
+          errorHandler : notify.onError("JS Copy Error: <%= error.message %>")
+      }))
+      // Опционально: минифицировать копируемый файл
+      // .pipe(uglify()) // Раскомментируйте, если нужна минификация
+      // .pipe(rename({ // Опционально: добавить суффикс .min
+      //     suffix: ".min"
+      // }))
+      .pipe(dest(path.build.js)) // Копируем в ту же папку JS
+      .pipe(browserSync.reload({stream: true}));
+
+}
+
 function images(cb) {
     return src(path.src.images)
         .pipe(imagemin([
@@ -258,11 +277,12 @@ function watchFiles() {
     gulp.watch([path.watch.html, path.watch.partials], html);
     gulp.watch([path.watch.css], cssWatch);
     gulp.watch([path.watch.js], jsWatch);
+    gulp.watch([path.watch.js_copy], copySpecificJs);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js,  images, copySpecificJs, fonts));
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
