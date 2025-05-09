@@ -86,13 +86,13 @@ h2 {
 
 @media screen and (max-width: 960px) {
     h2 {
-        font: 600 2.375rem/1.23 TildaSans;
+        font: 600 2.625rem/1.23 TildaSans;
     }
 }
 
 @media screen and (max-width: 640px) {
     h2 {
-        font: 600 1.875rem/1.23 TildaSans;
+        font: 600 2.625rem/1.23 TildaSans;
     }
 }
 
@@ -102,13 +102,13 @@ h3 {
 
 @media screen and (max-width: 960px) {
     h3 {
-        font: 600 1.75rem/1.17 TildaSans;
+        font: 600 1.875rem/1.17 TildaSans;
     }
 }
 
 @media screen and (max-width: 640px) {
     h3 {
-        font: 600 1.5rem/1.17 TildaSans;
+        font: 600 1.875rem/1.17 TildaSans;
     }
 }
 
@@ -118,13 +118,13 @@ h4 {
 
 @media screen and (max-width: 960px) {
     h4 {
-        font: 600 1.25rem/1.35 TildaSans;
+        font: 600 1.375rem/1.35 TildaSans;
     }
 }
 
 @media screen and (max-width: 640px) {
     h4 {
-        font: 600 1.125rem/1.35 TildaSans;
+        font: 600 1.375rem/1.35 TildaSans;
     }
 }
 
@@ -134,13 +134,13 @@ h5 {
 
 @media screen and (max-width: 960px) {
     h5 {
-        font: 600 1.125rem/1.35 TildaSans;
+        font: 600 1.25rem/1.35 TildaSans;
     }
 }
 
 @media screen and (max-width: 640px) {
     h5 {
-        font: 600 1rem/1.35 TildaSans;
+        font: 600 1.25rem/1.35 TildaSans;
     }
 }
 
@@ -248,6 +248,11 @@ a {
 .page-header__contacts {
     font: 500 1.125rem/1.2 TildaSans;
     text-align: right;
+}
+
+.page-header__contacts a {
+    color: black;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 960px) {
@@ -364,20 +369,8 @@ a {
 }
 
 .heading__text {
-    font: 300 1.125rem/1.55 TildaSans;
+    font: 300 1.25rem/1.5 TildaSans;
     opacity: 0.85;
-}
-
-@media screen and (max-width: 960px) {
-    .heading__text {
-        font: 300 1rem/1.55 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .heading__text {
-        font: 300 0.875rem/1.55 TildaSans;
-    }
 }
 
 .priem {
@@ -397,18 +390,6 @@ a {
 .priem__text {
     font: 300 1.5rem/1.5 TildaSans;
     margin-bottom: 6.5625rem;
-}
-
-@media screen and (max-width: 960px) {
-    .priem__text {
-        font: 300 1.375rem/1.5 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .priem__text {
-        font: 300 1.25rem/1.5 TildaSans;
-    }
 }
 
 .priem__socials a {
@@ -462,6 +443,12 @@ a {
     object-fit: cover;
 }
 
+@media screen and (max-width: 640px) {
+    .card-about__image {
+        display: none;
+    }
+}
+
 .card-about__title {
     margin-bottom: 0.5rem;
 }
@@ -473,18 +460,6 @@ a {
 .card-about__item {
     list-style-type: disc;
     font: 300 1rem/1.55 TildaSans;
-}
-
-@media screen and (max-width: 960px) {
-    .card-about__item {
-        font: 300 0.875rem/1.55 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .card-about__item {
-        font: 300 0.875rem/1.45 TildaSans;
-    }
 }
 
 .features {
@@ -530,19 +505,7 @@ a {
 }
 
 .feature__text {
-    font: 300 1.125rem/1.55 TildaSans;
-}
-
-@media screen and (max-width: 960px) {
-    .feature__text {
-        font: 300 1rem/1.55 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .feature__text {
-        font: 300 0.875rem/1.55 TildaSans;
-    }
+    font: 300 1rem/1.55 TildaSans;
 }
 
 .expertise {
@@ -592,23 +555,25 @@ a {
     margin-bottom: 1.5625rem;
 }
 
+.expertise__item-subtitle {
+    margin-bottom: 1.5625rem;
+}
+
 .expertise__item-text {
     font: 300 1rem/1.55 TildaSans;
     text-align: center;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 960px) {
-    .expertise__item-text {
-        max-width: 35rem;
-        font: 300 0.875rem/1.55 TildaSans;
-    }
+.expertise__item-list {
+    padding-left: 20px;
+    margin-bottom: 1.875rem;
+    text-align: left;
 }
 
-@media screen and (max-width: 640px) {
-    .expertise__item-text {
-        font: 300 0.875rem/1.45 TildaSans;
-    }
+.expertise__item-item {
+    list-style-type: disc;
+    font: 300 1rem/1.55 TildaSans;
 }
 
 .price {
@@ -688,18 +653,6 @@ a {
     font: 300 1rem/1.55 TildaSans;
 }
 
-@media screen and (max-width: 960px) {
-    .price__item-text {
-        font: 300 0.875rem/1.55 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .price__item-text {
-        font: 300 0.875rem/1.45 TildaSans;
-    }
-}
-
 .publications {
     padding: 7.5rem 0 9.375rem;
     background-color: #fcf8f2;
@@ -764,18 +717,6 @@ a {
     font: 300 1.125rem/1.55 TildaSans;
 }
 
-@media screen and (max-width: 960px) {
-    .card-publication__text {
-        font: 300 1rem/1.55 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .card-publication__text {
-        font: 300 0.875rem/1.55 TildaSans;
-    }
-}
-
 .card-publication__next-link {
     color: blue;
     text-decoration: underline;
@@ -825,18 +766,6 @@ a {
 
 .contacts__item b {
     font: 700 1.25rem/1.55 TildaSans;
-}
-
-@media screen and (max-width: 960px) {
-    .contacts__item {
-        font: 300 1.125rem/1.55 TildaSans;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .contacts__item {
-        font: 300 1rem/1.55 TildaSans;
-    }
 }
 
 .contacts__adress {

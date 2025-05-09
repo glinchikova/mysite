@@ -81,7 +81,8 @@ function html(cb) {
             extname: ".html"
         }))
         .pipe(dest(path.build.html))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(browserSync.reload());
+        // .pipe(browserSync.reload({stream: true}));
 
     cb();
 }
@@ -193,7 +194,138 @@ function js(cb) {
 function jsWatch(cb) {
     return src(path.src.js, {base: srcPath + 'assets/js/'})
         .pipe(plumber({
+            errorHandler : function(err) {"use strict";
+
+const {src, dest} = require("gulp");
+const gulp = require("gulp");
+const autoprefixer = require("gulp-autoprefixer");
+const cssbeautify = require("gulp-cssbeautify");
+const removeComments = require('gulp-strip-css-comments');
+const rename = require("gulp-rename");
+const sass = require('gulp-sass')(require('sass'));
+const cssnano = require("gulp-cssnano");
+const uglify = require("gulp-uglify");
+const plumber = require("gulp-plumber");
+const panini = require("panini");
+const imagemin = require("gulp-imagemin");
+const del = require("del");
+const notify = require("gulp-notify");
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const browserSync = require("browser-sync").create();
+const cache = require('gulp-cache')
+
+
+/* Paths */
+const srcPath = 'src/';
+const distPath = 'docs/';
+
+const specificJsFileToCopy = 'glinikovaru.js'
+
+const path = {
+    build: {
+        html:   distPath,
+        js:     distPath + "assets/js/",
+        css:    distPath + "assets/css/",
+        images: distPath + "assets/images/",
+        fonts:  distPath + "assets/fonts/"
+    },
+    src: {
+        html:   srcPath + "pages/**/*",
+        js:     srcPath + "assets/js/*.js",
+        js_copy: srcPath + "assets/js/" + specificJsFileToCopy,
+        css:    srcPath + "assets/scss/*.scss",
+        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+    },
+    watch: {
+        html:   srcPath + "pages/**/*",
+        partials: srcPath + "partials/**/*",
+        js:     srcPath + "assets/js/**/*.js",
+        js_copy: srcPath + "assets/js/" + specificJsFileToCopy,
+        css:    srcPath + "assets/scss/**/*.scss",
+        images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
+    },
+    clean: "./" + distPath
+}
+
+
+
+/* Tasks */
+
+function serve() {
+    browserSync.init({
+        server: {
+            baseDir: "./" + distPath
+        }
+    });
+}
+
+function html(cb) {
+    panini.refresh();
+    return src(path.src.html, {base: srcPath + "pages/"})
+        .pipe(plumber())
+        .pipe(panini({
+            root:       srcPath + 'pages/',
+            layouts:    srcPath + 'layouts/',
+            partials:   srcPath + 'partials/',
+            helpers:    srcPath + 'helpers/',
+            data:       srcPath + 'data/'
+        }))
+        .pipe(rename({
+            extname: ".html"
+        }))
+        .pipe(dest(path.build.html))
+        .pipe(browserSync.reload());
+        // .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+
+function css(cb) {
+    return src(path.src.css, {base: srcPath + "assets/scss/"})
+        .pipe(plumber({
             errorHandler : function(err) {
+                notify.onError({
+                    title:    "SCSS Error",
+                    message:  "Error: <%= error.message %>"
+                })(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sass({
+            includePaths: './node_modules/'
+        }))
+        .pipe(autoprefixer({
+            cascade: true
+        }))
+        .pipe(cssbeautify())
+        .pipe(dest(path.build.css))
+        .pipe(cssnano({
+            zindex: false,
+            discardComments: {
+                removeAll: true
+            }
+        }))
+        .pipe(removeComments())
+        .pipe(rename({
+            suffix: ".min",
+            extname: ".css"
+        }))
+        .pipe(dest(path.build.css))
+        .pipe(browserSync.reload({stream: true}));
+
+    cb();
+}
+
+function cssWatch(cb) {
+    return src(path.src.css, {base: srcPath + "assets/scss/"})
+        .pipe(plumber({
+            errorHandler : function(err) {
+                notify.onError({
+                    title:    "SCSS Error",
+                    message:  "Error: <%= error.messa
                 notify.onError({
                     title:    "JS Error",
                     message:  "Error: <%= error.message %>"

@@ -38,15 +38,15 @@
     }
     
     &__text {
-        font: $text18;
+        font: $text20;
         opacity: 0.85;
 
-        @include breakpoint($tablet-bp) {
-            font: $text16;
-        }
+        // @include breakpoint($tablet-bp) {
+        //     font: $text18;
+        // }
 
-        @include breakpoint($mobile-bp) {
-            font: $text14;
-        }
+        // @include breakpoint($mobile-bp) {
+        //     font: $text16;
+        // }
     }
 }

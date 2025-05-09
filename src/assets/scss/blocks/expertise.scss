@@ -40,18 +40,33 @@
         margin-bottom: rem(25);
     }
 
+    &__item-subtitle {
+        margin-bottom: rem(25);
+    }
+
     &__item-text {
         font: $text16;
         text-align: center;
         margin: 0 auto;
 
-        @include breakpoint($tablet-bp) {
-            max-width: rem(560);
-            font: $text14;
-        }
+        // @include breakpoint($tablet-bp) {
+        //     max-width: rem(560);
+        //     font: $text14;
+        // }
         
-        @include breakpoint($mobile-bp) {
-            font: $text12;
-        }        
+        // @include breakpoint($mobile-bp) {
+        //     font: $text12;
+        // }        
+    }
+
+    &__item-list {
+        padding-left: 20px;
+        margin-bottom: rem(30);
+        text-align: left;
+    }
+
+    &__item-item {
+        list-style-type: disc;
+        font: $text16;
     }
 }

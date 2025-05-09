@@ -19,13 +19,13 @@
         font: $text24;
         margin-bottom: rem(105);
 
-        @include breakpoint($tablet-bp) {
-            font: $text22;
-        }
+        // @include breakpoint($tablet-bp) {
+        //     font: $text22;
+        // }
 
-        @include breakpoint($mobile-bp) {
-            font: $text20;
-        }
+        // @include breakpoint($mobile-bp) {
+        //     font: $text20;
+        // }
     }
 
     &__socials {

@@ -29,13 +29,13 @@
             font: $contacts-bold;
         }
 
-        @include breakpoint($tablet-bp) {
-            font: $text18;
-        }
+        // @include breakpoint($tablet-bp) {
+        //     font: $text18;
+        // }
 
-        @include breakpoint($mobile-bp) {
-            font: $text16;
-        }
+        // @include breakpoint($mobile-bp) {
+        //     font: $text16;
+        // }
     }
 
     &__adress {

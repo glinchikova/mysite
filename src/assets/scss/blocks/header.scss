@@ -25,6 +25,11 @@
         font: $header-contacts;
         text-align: right;
 
+        a {
+            color: black;
+            font-weight: 600;
+        }
+
         @include breakpoint($tablet-bp) {
             text-align: center;
         }

@@ -66,12 +66,12 @@
     &__item-text {
         font: $text16;
 
-        @include breakpoint($tablet-bp) {
-            font: $text14;
-        }
+        // @include breakpoint($tablet-bp) {
+        //     font: $text14;
+        // }
 
-        @include breakpoint($mobile-bp) {
-            font: $text12;
-        }
+        // @include breakpoint($mobile-bp) {
+        //     font: $text12;
+        // }
     }
 }
