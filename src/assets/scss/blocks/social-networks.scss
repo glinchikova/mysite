@@ -1,0 +1,47 @@
+.networks {
+    padding: rem(120) 0 rem(10);
+
+    @include breakpoint($mobile-bp) {
+        padding: rem(90) 0 rem(10);
+    }
+    
+    &__container {
+        max-width: 560px;
+        margin: 0 auto;
+        text-align: center;
+
+        // @include breakpoint($mobile-bp) {
+        //     padding: 0 10px;
+        // }
+    }
+
+    &__title {
+        margin-bottom: rem(40);
+    }
+
+    &__text {
+        font: $text24;
+        margin-bottom: rem(105);
+
+        // @include breakpoint($tablet-bp) {
+        //     font: $text22;
+        // }
+
+        // @include breakpoint($mobile-bp) {
+        //     font: $text20;
+        // }
+    }
+
+    &__socials {
+        a {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+        }
+
+        .social {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

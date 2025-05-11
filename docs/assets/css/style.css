@@ -726,6 +726,36 @@ a {
     display: block;
 }
 
+.networks {
+    padding: 1.875rem 0 3.75rem;
+}
+
+.networks__container {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.networks__title {
+    margin-bottom: 2.5rem;
+}
+
+.networks__text {
+    font: 300 1.5rem/1.5 TildaSans;
+    margin-bottom: 6.5625rem;
+}
+
+.networks__socials a {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}
+
+.networks__socials .social {
+    width: 100%;
+    height: 100%;
+}
+
 .contacts {
     padding: 9.375rem 0;
 }
